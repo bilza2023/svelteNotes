@@ -1,10 +1,9 @@
 async function load({ fetch }) {
-  const resp = await fetch("https://dummyjson.com/products?limit=10&skip=10&select=title,price");
-  const data = await resp.json();
-  console.log(data);
+  const resp = await fetch("http://localhost:3000/api/get_cities");
+  const cities = await resp.json();
   return {
     title: "The Title from load function",
-    products: data.products
+    cities
   };
 }
 export {

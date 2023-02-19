@@ -2,28 +2,14 @@
 import {enhance} from "$app/forms";
 export let  data;
 export let form;
-// console.log(form);
+console.log(form);
 </script>
 
 <div class="bg-gray-800 w-full">
-
+  
   <form class="w-3/5 bg-gray-500 p-4 rounded-lg mx-auto mt-2" method="POST"
   action="?/create"
-  use:enhance = {  ({form})=>{
-  //--runs before form submission
-    // console.log("form",form);// console.log("data",data);// console.log("action",action);
-    
-
-  //--runs after form submission
-        return async ({result,update})=>{
-          // console.log("result",result);
-              if (result.type=="success"){
-                // update({data: {articles}});
-                form.reset();
-                update();
-              }
-        }; 
-  }} 
+  use:enhance
   >
     <div class="p-4">
       <label class="block font-bold mb-2" for="title">
@@ -36,8 +22,8 @@ export let form;
         name="title"
         value={form?.title ?? ""}
       />
-      {#if form?.success == false}
-        <div>Title is too short</div>
+      {#if form?.errorMsg !== null}
+        <div class="bg-red-800 text-white p-2 m-2 border-2">Title is too short</div>
       {/if}
     </div>
     <div class="p-4">
@@ -50,7 +36,7 @@ export let form;
         id="content"
         name="content"
         rows="2"
-        value={form?.title ?? ""}
+        value={form?.content ?? ""}
       ></textarea>
         <!-- value={form?.content ?? ""} -->
     </div>

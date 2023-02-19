@@ -1,0 +1,1 @@
+async function e({fetch:t}){return{title:"The Title from load function",cities:await(await t("http://localhost:3000/api/get_cities")).json()}}const a=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{a as _,e as l};

@@ -30,7 +30,8 @@ export const actions = {
 //--
   const id = parseInt(Math.random() * 10000);  
 const item = {id,title,content}
-  articles.push(item);
+  // articles.push(item);
+  articles = [item, ...articles];
   return {errorMsg:null};
     // TODO log the user in
   },

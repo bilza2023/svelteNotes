@@ -1,9 +1,9 @@
-import * as universal from '../entries/pages/chess/_page.js';
+import * as server from '../entries/pages/articles/_page.server.js';
 
 export const index = 7;
-export const component = async () => (await import('../entries/pages/chess/_page.svelte.js')).default;
-export const file = '_app/immutable/components/pages/chess/_page.svelte-108cf731.js';
-export { universal };
-export const imports = ["_app/immutable/components/pages/chess/_page.svelte-108cf731.js","_app/immutable/chunks/index-ccc1aff5.js","_app/immutable/modules/pages/chess/_page.js-efaf1e2a.js","_app/immutable/chunks/_page-8eb4f938.js"];
+export const component = async () => (await import('../entries/pages/articles/_page.svelte.js')).default;
+export const file = '_app/immutable/components/pages/articles/_page.svelte-7e188afa.js';
+export { server };
+export const imports = ["_app/immutable/components/pages/articles/_page.svelte-7e188afa.js","_app/immutable/chunks/index-0b5a1c33.js","_app/immutable/chunks/forms-52496a3d.js","_app/immutable/chunks/parse-d12b0d5b.js","_app/immutable/chunks/singletons-0cf6cf67.js"];
 export const stylesheets = [];
 export const fonts = [];

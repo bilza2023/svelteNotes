@@ -8,8 +8,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <h1>${escape(data.title)}</h1>
 
 
-<ul>${each(data.products, (product) => {
-    return `<li>${escape(product.title)} - $${escape(product.price)}</li>`;
+<ul>${each(data.cities, (city) => {
+    return `<li>${escape(city.id)} - $${escape(city.name)}</li>`;
   })}</ul>`;
 });
 export {
