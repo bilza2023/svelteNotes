@@ -1,0 +1,1 @@
+<h1>Internal Component inside anim folder</h1>

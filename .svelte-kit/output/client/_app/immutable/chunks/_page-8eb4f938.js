@@ -1,0 +1,1 @@
+async function e({fetch:o}){const t=await(await o("https://dummyjson.com/products?limit=10&skip=10&select=title,price")).json();return console.log(t),{title:"The Title from load function",products:t.products}}const c=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{c as _,e as l};
