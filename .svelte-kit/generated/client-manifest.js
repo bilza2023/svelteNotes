@@ -17,7 +17,8 @@ export const nodes = [() => import('./nodes/0'),
 	() => import('./nodes/14'),
 	() => import('./nodes/15'),
 	() => import('./nodes/16'),
-	() => import('./nodes/17')];
+	() => import('./nodes/17'),
+	() => import('./nodes/18')];
 
 export const server_loads = [];
 
@@ -28,15 +29,16 @@ export const dictionary = {
 	"/anim/inner": [6,[2]],
 	"/articles": [~7],
 	"/articles/create": [~8],
-	"/articles/[articleId]": [~9],
-	"/chess": [10],
-	"/chess/[gameId]": [11],
-	"/contact": [12],
-	"/formtest": [~13],
-	"/manage": [14],
-	"/sqlite": [~15],
-	"/sverdle": [~16],
-	"/sverdle/how-to-play": [17]
+	"/articles/edit/[articleId]": [~9],
+	"/articles/[articleId]": [~10],
+	"/chess": [11],
+	"/chess/[gameId]": [12],
+	"/contact": [13],
+	"/formtest": [~14],
+	"/manage": [15],
+	"/sqlite": [~16],
+	"/sverdle": [~17],
+	"/sverdle/how-to-play": [18]
 };
 
 export const hooks = {

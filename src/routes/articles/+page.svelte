@@ -48,7 +48,7 @@ class="bg-blue-600 flex justify-center items-center py-2"
 class="px-2 py-1 border rounded-l" type="text">
 
 {#if filterToggle}
-<button class="px-4 py-1 m-1 bg-green-800 text-white rounded-r"
+<button class=" px-4 py-1 m-1 bg-green-800 text-white rounded-r"
 on:click={removeFilter}
 >X</button>
 {/if}
