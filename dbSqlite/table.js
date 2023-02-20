@@ -1,6 +1,5 @@
 
 export default class Table {
-
 constructor(sequalizeModel){
 this.seqTable = sequalizeModel; 
 }

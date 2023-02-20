@@ -1,4 +1,3 @@
-import * as universal from "../../../src/routes/sqlite/+page.js";
+import * as universal from "../../../src/routes/manage/+page.js";
 export { universal };
-export { default as component } from "../../../src/routes/sqlite/+page.svelte";
-export const server = true;
+export { default as component } from "../../../src/routes/manage/+page.svelte";

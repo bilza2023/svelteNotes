@@ -1,14 +1,29 @@
 
-
-const articles = [
-  {id : 1, title:"Bill", content:"These are the content :1"  },
-  {id : 2, title:"Kill", content:"These are the content :2"  },
-  {id : 3, title:"Mike", content:"These are the content :3"  }
-
-];
-
-
+import {City,Article} from "../../../dbSqlite/dbSqlite.js";
+import { redirect } from '@sveltejs/kit';
+//////----
 export async function load({fetch}) {
+Article.create({title:"The Title", content:"The description"});
 
-    return { articles };
+// City.create({name:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"});
+
+const articles = Article.findAll();
+    return {
+      title: "The Title from load function",
+      articles 
+    };
 }
+
+//////----
+export const actions = {
+  edit: async ({request}) => {
+  const formData = await request.formData();
+  const id = formData.get('id'); 
+    //--redirect
+    throw redirect(307, `http://localhost/articles/${id}`);
+  }
+  
+
+
+/////////////////////---Actions end--////////////////////  
+};

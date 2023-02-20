@@ -1,3 +1,2 @@
-import * as universal from "../../../src/routes/manage/+page.js";
-export { universal };
-export { default as component } from "../../../src/routes/manage/+page.svelte";
+export { default as component } from "../../../src/routes/formtest/+page.svelte";
+export const server = true;

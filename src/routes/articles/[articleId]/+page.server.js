@@ -2,13 +2,14 @@
 import {Article} from "../../../../dbSqlite/dbSqlite.js";
 
 //////----
-export async function load({fetch}) {
-// City.create({name:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"});
+export async function load({ fetch,params}) {
 
-const articles = Article.findAll();
+// const formData = await request.formData();
+const id = params.articleId;
+
+const article = await Article.read(id);
     return {
-      title: "The Title from load function",
-      articles 
+      article 
     };
 }
 

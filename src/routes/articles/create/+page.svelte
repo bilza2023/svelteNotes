@@ -22,9 +22,9 @@ console.log(form);
         name="title"
         value={form?.title ?? ""}
       />
-      {#if form?.errorMsg !== null}
+      <!-- {#if form?.errorMsg !== null}
         <div class="bg-red-800 text-white p-2 m-2 border-2">Title is too short</div>
-      {/if}
+      {/if} -->
     </div>
     <div class="p-4">
       <label class="block font-bold mb-2" for="lastName">

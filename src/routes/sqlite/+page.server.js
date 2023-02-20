@@ -1,8 +1,12 @@
 
-import {City} from "../../../dbSqlite/dbSqlite.js";
+import {City,Article} from "../../../dbSqlite/dbSqlite.js";
 
 //////----
 export async function load({fetch}) {
+Article.create({title:"The Title", content:"The description"});
+
+// City.create({name:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"});
+
 const cities = City.findAll();
     return {
       title: "The Title from load function",
