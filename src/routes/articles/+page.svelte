@@ -1,37 +1,47 @@
 <script>
+import Table from "./table.svelte";
 import {enhance} from "$app/forms";
 export let  data;
-export let form;
-console.log(form);
+const articlesAll = [...data.articles];
+// export let form;
+let articles = articlesAll;
+let searchText = "";
+// console.log(form);
+
+// const search = ()=>{
+// console.log(searchText);
+// console.log(data);
+// }
+function search( ) {
+articles = articlesAll; // reinstate all the remove items
+
+  const filteredArticles = articles.filter(article => {
+  const trimmed = searchText.trim();
+  const lower  = trimmed.toLocaleLowerCase(); 
+    return article.title.toLowerCase().includes( lower);
+  });
+//   console.log(filteredArticles);
+articles = filteredArticles;
+}
+
 </script>
 
 
 <h1 class="text-white">Articles</h1>
 
 
-<table class="mx-auto w-full  mb-10">
+<div
+class="bg-blue-600 flex justify-center items-center py-2"
+>
+ <!-- search bar form -->
+<input name = "searchText" bind:value={searchText}
+class="px-2 py-1 border rounded-l" type="text">
+<button class="px-4 py-1 bg-blue-800 text-white rounded-r"
+on:click|preventDefault = {search}
+>Search</button>
 
-<tr class="text-white p-5 bg-blue-900">
-<td  class="p-2 m-2 border-2 ">id</td>
-<td  class="p-2 m-2 border-2 ">Title</td>
-<td  class="p-2 m-2 border-2 "> </td>
-</tr> 
+</div>
+<hr/>
 
-{#each data.articles as article }
-<tr class="text-white p-5">
 
-<td class="p-2 m-2 border-2  "> {article.id} </td>
-<td class="p-2 m-2 border-2  "> {article.title}</td> 
-
-<td class="p-2 m-2 border-2   bg-green-800">
-<form method="post" action="?/edit" use:enhance>
-<input name="id" type="hidden" hidden value={article.id}>
-<button>Edit</button>
-</form>
-
-</td> 
-
-</tr>
-{/each}
-</table>
-
+<Table articles={articles} />
