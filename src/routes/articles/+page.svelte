@@ -5,32 +5,32 @@
 import Table from "./table.svelte";
 import {enhance} from "$app/forms";
 export let  data;
-
+let articles = data.articles;
+////////////////////////////////////////////
 let filterToggle = false;
 let searchText = "";
-// export let form;
-let articles =  [...data.articles];
 
+//////////////////////////////////////////////
 function search( ) {
-  const trimmed = searchText.trim();
+const trimmed = searchText.trim();
   if (trimmed == ""){return;}
 const lower  = trimmed.toLocaleLowerCase(); 
 
 filterToggle = true;
-articles = articlesAll; // reinstate all the remove items
+articles = data.articles;
   
   const filteredArticles = articles.filter(article => {
     return article.title.toLowerCase().includes( lower);
   });
 //   console.log(filteredArticles);
-articles = filteredArticles;
+articles = [...filteredArticles];
 }
 
 
 function removeFilter(){
 filterToggle = false;
 searchText = "";
-articles = [...articlesAll];
+articles = [...data.articles];
 }
 
 function delarticle(event){
@@ -39,11 +39,12 @@ const filteredArticles = articles.filter(article => article.id !== id);
 
 // console.log("delarticle from parent::",id);
 // console.log("filteredArticles::",filteredArticles);
-articles = [...filteredArticles];
+//--keep this compatibility
+data.articles = [...filteredArticles];
+articles = data.articles
 }
 
 </script>
-
 
 <h1 class="text-white">Articles</h1>
 
@@ -67,11 +68,15 @@ on:click|preventDefault = {search}
 >Search</button>
 
 <div class="bg-blue-800 text-white text-xl p-1 m-1">
-Found : {articles.length}
+Found : { articles.length}
 </div>
 
 </div>
 <hr/>
 
 
-<Table articles={articles} on:delarticle={delarticle} />
+
+
+
+
+<Table articles={ articles} on:delarticle={delarticle} />

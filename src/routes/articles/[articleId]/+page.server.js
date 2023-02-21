@@ -23,12 +23,12 @@ export const actions = {
   Article.create({title , content });
   return {success: true};
     // TODO log the user in
-  },
-
-
-  delete: async ({request}) => {
-const formData = await request.formData();
-  const id = formData.get('id');
-  console.log("id",id);
   }
+
+
+//   delete: async ({request}) => {
+// const formData = await request.formData();
+//   const id = formData.get('id');
+//   console.log("id",id);
+//   }
 };
