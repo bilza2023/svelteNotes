@@ -37,10 +37,9 @@ function delarticle(event){
 const id = parseInt(event.detail.id);
 const filteredArticles = articles.filter(article => article.id !== id);
 
-console.log("delarticle from parent::",id);
-console.log("filteredArticles::",filteredArticles);
+// console.log("delarticle from parent::",id);
+// console.log("filteredArticles::",filteredArticles);
 articles = [...filteredArticles];
-
 }
 
 </script>

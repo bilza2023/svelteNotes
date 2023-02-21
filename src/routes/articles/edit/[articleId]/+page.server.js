@@ -1,11 +1,18 @@
 
 import {Article} from "../../../../../dbSqlite/dbSqlite.js";
+import {ArticleSeq} from "../../../../../dbSqlite/dbSequalize.js";
 
 //////----
 export async function load({ fetch,params}) {
 
 // const formData = await request.formData();
-const id = params.articleId;
+const id =  parseInt(params.articleId);
+
+
+//  await ArticleSeq.update(
+//     { title : "20202020020202", content :"20202020020202" },
+//     { where: { id } }
+//   );
 
 const article = await Article.read(id);
     return {
@@ -15,20 +22,19 @@ const article = await Article.read(id);
 
 //////----
 export const actions = {
-//   create: async ({request}) => {
-//   const formData = await request.formData();
-//   const title = formData.get('title');
-//   const content = formData.get('content');
-//   // console.log("formData",formData);
-//   Article.create({title , content });
-//   return {success: true};
-//     // TODO log the user in
-//   },
+  update: async ({request}) => {
+  const formData = await request.formData();
 
+  const id = parseInt(formData.get('id'));
+  const title = formData.get('title');
+  
+  const content = formData.get('content');
 
-  delete: async ({request}) => {
-// const formData = await request.formData();
-  // const id = formData.get('id');
-  // console.log("id",id);
+ await ArticleSeq.update(
+    { title, content },
+    { where: { id } }
+  );
+  return {success: true};
   }
+
 };

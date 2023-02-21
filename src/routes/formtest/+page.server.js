@@ -28,7 +28,7 @@ export const actions = {
       return fail(400,{title,content,success:false, errorMsg : "The title is too shor."});    
     }
 //--
-  const id = parseInt(Math.random() * 10000);  
+const id = parseInt(Math.random() * 10000);  
 const item = {id,title,content}
   // articles.push(item);
   articles = [item, ...articles];
@@ -36,13 +36,13 @@ const item = {id,title,content}
     // TODO log the user in
   },
 //--delete
-delete: async ({request}) => {
-const formData = await request.formData();
-const id = formData.get("id");
-articles = articles.filter(article => article.id != id);
-// console.log("id",id);
-return {success: true};
-}
+  delete: async ({request}) => {
+  const formData = await request.formData();
+  const id = formData.get("id");
+  articles = articles.filter(article => article.id != id);
+  // console.log("id",id);
+  return {success: true};
+  }
 
 
 };
