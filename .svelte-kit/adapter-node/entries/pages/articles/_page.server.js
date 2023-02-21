@@ -1,11 +1,28 @@
-const articles = [
-  { id: 1, title: "Bill", content: "These are the content :1" },
-  { id: 2, title: "Kill", content: "These are the content :2" },
-  { id: 3, title: "Mike", content: "These are the content :3" }
-];
+import { A as Article } from "../../../chunks/dbSqlite.js";
 async function load({ fetch }) {
-  return { articles };
+  const articles = Article.findAll();
+  return {
+    articles
+  };
 }
+const actions = {
+  // edit: async ({request}) => {
+  // const formData = await request.formData();
+  // const id = formData.get('id'); 
+  //   //--redirect
+  //   throw redirect(307, `http://localhost/articles/${id}`);
+  // }
+  //--delete
+  delete: async ({ request }) => {
+    const formData = await request.formData();
+    const id = formData.get("id");
+    Article.del(id);
+    console.log("id", id);
+    return { success: true };
+  }
+  /////////////////////---Actions end--////////////////////  
+};
 export {
+  actions,
   load
 };

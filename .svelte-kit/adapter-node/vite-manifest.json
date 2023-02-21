@@ -18,6 +18,9 @@
     "isEntry": true,
     "src": ".svelte-kit/build/index.js"
   },
+  "_dbSqlite.js": {
+    "file": "chunks/dbSqlite.js"
+  },
   "_environment.js": {
     "file": "chunks/environment.js",
     "imports": [
@@ -125,6 +128,9 @@
   },
   "src/routes/articles/+page.server.js": {
     "file": "entries/pages/articles/_page.server.js",
+    "imports": [
+      "_dbSqlite.js"
+    ],
     "isEntry": true,
     "src": "src/routes/articles/+page.server.js"
   },
@@ -136,10 +142,26 @@
     "isEntry": true,
     "src": "src/routes/articles/+page.svelte"
   },
+  "src/routes/articles/[articleId]/+page.server.js": {
+    "file": "entries/pages/articles/_articleId_/_page.server.js",
+    "imports": [
+      "_dbSqlite.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/articles/[articleId]/+page.server.js"
+  },
+  "src/routes/articles/[articleId]/+page.svelte": {
+    "file": "entries/pages/articles/_articleId_/_page.svelte.js",
+    "imports": [
+      "_index.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/articles/[articleId]/+page.svelte"
+  },
   "src/routes/articles/create/+page.server.js": {
     "file": "entries/pages/articles/create/_page.server.js",
     "imports": [
-      "_index2.js"
+      "_dbSqlite.js"
     ],
     "isEntry": true,
     "src": "src/routes/articles/create/+page.server.js"
@@ -151,6 +173,22 @@
     ],
     "isEntry": true,
     "src": "src/routes/articles/create/+page.svelte"
+  },
+  "src/routes/articles/edit/[articleId]/+page.server.js": {
+    "file": "entries/pages/articles/edit/_articleId_/_page.server.js",
+    "imports": [
+      "_dbSqlite.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/articles/edit/[articleId]/+page.server.js"
+  },
+  "src/routes/articles/edit/[articleId]/+page.svelte": {
+    "file": "entries/pages/articles/edit/_articleId_/_page.svelte.js",
+    "imports": [
+      "_index.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/articles/edit/[articleId]/+page.svelte"
   },
   "src/routes/chess/+page.js": {
     "file": "entries/pages/chess/_page.js",
@@ -215,13 +253,11 @@
     "isEntry": true,
     "src": "src/routes/manage/+page.svelte"
   },
-  "src/routes/sqlite/+page.js": {
-    "file": "entries/pages/sqlite/_page.js",
-    "isEntry": true,
-    "src": "src/routes/sqlite/+page.js"
-  },
   "src/routes/sqlite/+page.server.js": {
     "file": "entries/pages/sqlite/_page.server.js",
+    "imports": [
+      "_dbSqlite.js"
+    ],
     "isEntry": true,
     "src": "src/routes/sqlite/+page.server.js"
   },

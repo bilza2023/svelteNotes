@@ -1,9 +1,9 @@
-import * as universal from '../entries/pages/chess/_page.js';
+import * as server from '../entries/pages/articles/edit/_articleId_/_page.server.js';
 
 export const index = 9;
-export const component = async () => (await import('../entries/pages/chess/_page.svelte.js')).default;
-export const file = '_app/immutable/components/pages/chess/_page.svelte-e693b09f.js';
-export { universal };
-export const imports = ["_app/immutable/components/pages/chess/_page.svelte-e693b09f.js","_app/immutable/chunks/index-0b5a1c33.js","_app/immutable/modules/pages/chess/_page.js-348e8f75.js","_app/immutable/chunks/_page-6b32ce51.js"];
+export const component = async () => (await import('../entries/pages/articles/edit/_articleId_/_page.svelte.js')).default;
+export const file = '_app/immutable/components/pages/articles/edit/_articleId_/_page.svelte-bcdc54cc.js';
+export { server };
+export const imports = ["_app/immutable/components/pages/articles/edit/_articleId_/_page.svelte-bcdc54cc.js","_app/immutable/chunks/index-0316f0bc.js","_app/immutable/chunks/forms-d6216b05.js","_app/immutable/chunks/parse-d12b0d5b.js","_app/immutable/chunks/singletons-275da48e.js"];
 export const stylesheets = [];
 export const fonts = [];

@@ -1,33 +1,63 @@
-import { c as create_ssr_component, d as each, e as escape, f as add_attribute } from "../../../chunks/index.js";
+import { c as create_ssr_component, d as createEventDispatcher, f as each, e as escape, h as add_attribute, v as validate_component } from "../../../chunks/index.js";
 import "devalue";
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { data } = $$props;
+const Table = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { form } = $$props;
-  console.log(form);
-  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
-    $$bindings.data(data);
+  let { articles } = $$props;
+  createEventDispatcher();
   if ($$props.form === void 0 && $$bindings.form && form !== void 0)
     $$bindings.form(form);
-  return `<h1 class="${"text-white"}">Articles</h1>
-
-
-<table class="${"mx-auto w-3/5 mb-10"}"><tr class="${"text-white p-5 bg-green-900"}"><td class="${"p-2 m-2 border-2 "}">id</td>
+  if ($$props.articles === void 0 && $$bindings.articles && articles !== void 0)
+    $$bindings.articles(articles);
+  return `<table class="${"mx-auto w-full mb-10"}"><tr class="${"text-white p-5 bg-blue-900"}"><td class="${"p-2 m-2 border-2 "}">id</td>
 <td class="${"p-2 m-2 border-2 "}">Title</td>
-<td class="${"p-2 m-2 border-2 "}">Content</td>
 <td class="${"p-2 m-2 border-2 "}"></td>
-<td class="${"p-2 m-2 border-2 "}"></td></tr>
+<td class="${"p-2 m-2 border-2 "}"></td>
+<td class="${"p-2 m-2 border-2 "}"></td></tr> 
 
-${each(data.articles, (article) => {
+${each(articles, (article) => {
     return `<tr class="${"text-white p-5"}"><td class="${"p-2 m-2 border-2 "}">${escape(article.id)}</td>
 <td class="${"p-2 m-2 border-2 "}">${escape(article.title)}</td> 
-<td class="${"p-2 m-2 border-2 "}">${escape(article.content)}</td> 
-<td class="${"p-2 m-2 border-2 bg-green-700"}">Edit</td> 
-<td class="${"p-2 m-2 border-2 bg-red-800"}"><form method="${"post"}" action="${"?/delete"}"><input name="${"id"}" type="${"hidden"}" hidden${add_attribute("value", article.id, 0)}>
-<button>Delete</button>
+
+<td class="${"p-2 m-2 border-2 bg-blue-800"}"><a class="${"text-white"}"${add_attribute("href", `http://localhost/articles/${article.id}`, 0)}>View</a></td> 
+
+
+<td class="${"p-2 m-2 border-2 bg-red-400"}"><a class="${"text-white"}"${add_attribute("href", `http://localhost/articles/edit/${article.id}`, 0)}>Edit</a></td> 
+
+
+<td class="${"p-2 m-2 border-2 bg-red-900"}"><form method="${"post"}" action="${"?/delete"}"><input name="${"id"}" type="${"hidden"}" hidden${add_attribute("value", article.id, 0)}>
+<button class="${"text-white"}">Delete</button>
 </form></td> 
+
 
 </tr>`;
   })}</table>`;
+});
+const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { data } = $$props;
+  let articles = data.articles;
+  let searchText = "";
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  return `<h1 class="${"text-white"}">Articles</h1>
+
+
+<div class="${"bg-blue-600 flex justify-center items-center py-2"}">
+<input name="${"searchText"}" class="${"px-2 py-1 border rounded-l"}" type="${"text"}"${add_attribute("value", searchText, 0)}>
+
+${``}
+
+
+<button class="${"px-4 py-1 bg-blue-800 text-white rounded-r"}">Search</button>
+
+<div class="${"bg-blue-800 text-white text-xl p-1 m-1"}">Found : ${escape(articles.length)}</div></div>
+<hr>
+
+
+
+
+
+
+${validate_component(Table, "Table").$$render($$result, { articles }, {}, {})}`;
 });
 export {
   Page as default

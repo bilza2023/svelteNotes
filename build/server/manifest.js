@@ -4,22 +4,24 @@ const manifest = {
 	assets: new Set(["favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain"},
 	_: {
-		entry: {"file":"_app/immutable/start-aa09063e.js","imports":["_app/immutable/start-aa09063e.js","_app/immutable/chunks/index-0b5a1c33.js","_app/immutable/chunks/singletons-0cf6cf67.js","_app/immutable/chunks/parse-d12b0d5b.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-3dee46de.js","imports":["_app/immutable/start-3dee46de.js","_app/immutable/chunks/index-0316f0bc.js","_app/immutable/chunks/singletons-275da48e.js","_app/immutable/chunks/parse-d12b0d5b.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
-			() => import('./chunks/0-7ed8f8f5.js'),
-			() => import('./chunks/1-b8a5b6c3.js'),
-			() => import('./chunks/2-5f9ad795.js'),
-			() => import('./chunks/5-2c42993c.js'),
-			() => import('./chunks/6-f4a9d911.js'),
-			() => import('./chunks/7-85feb434.js'),
-			() => import('./chunks/8-19acdb1a.js'),
-			() => import('./chunks/9-e96311d8.js'),
-			() => import('./chunks/10-47cdcca3.js'),
-			() => import('./chunks/11-a3740f58.js'),
-			() => import('./chunks/12-022d4d39.js'),
-			() => import('./chunks/13-3942ad8c.js'),
-			() => import('./chunks/14-bdca8690.js'),
-			() => import('./chunks/15-9a705102.js')
+			() => import('./chunks/0-0b6c98eb.js'),
+			() => import('./chunks/1-e5484244.js'),
+			() => import('./chunks/2-bf0f6594.js'),
+			() => import('./chunks/5-ba768eb5.js'),
+			() => import('./chunks/6-d1b09143.js'),
+			() => import('./chunks/7-c5ebc105.js'),
+			() => import('./chunks/8-0db391e2.js'),
+			() => import('./chunks/9-6113355b.js'),
+			() => import('./chunks/10-c2715b15.js'),
+			() => import('./chunks/11-ffdae64a.js'),
+			() => import('./chunks/12-7e388da8.js'),
+			() => import('./chunks/13-30688972.js'),
+			() => import('./chunks/14-bee2168c.js'),
+			() => import('./chunks/15-8c924bb7.js'),
+			() => import('./chunks/16-1a39d6c2.js'),
+			() => import('./chunks/17-c1a46022.js')
 		],
 		routes: [
 			{
@@ -51,52 +53,66 @@ const manifest = {
 				endpoint: null
 			},
 			{
+				id: "/articles/edit/[articleId]",
+				pattern: /^\/articles\/edit\/([^/]+?)\/?$/,
+				params: [{"name":"articleId","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0], errors: [1], leaf: 7 },
+				endpoint: null
+			},
+			{
+				id: "/articles/[articleId]",
+				pattern: /^\/articles\/([^/]+?)\/?$/,
+				params: [{"name":"articleId","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0], errors: [1], leaf: 8 },
+				endpoint: null
+			},
+			{
 				id: "/chess",
 				pattern: /^\/chess\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 7 },
+				page: { layouts: [0], errors: [1], leaf: 9 },
 				endpoint: null
 			},
 			{
 				id: "/chess/[gameId]",
 				pattern: /^\/chess\/([^/]+?)\/?$/,
 				params: [{"name":"gameId","optional":false,"rest":false,"chained":false}],
-				page: { layouts: [0], errors: [1], leaf: 8 },
+				page: { layouts: [0], errors: [1], leaf: 10 },
 				endpoint: null
 			},
 			{
 				id: "/contact",
 				pattern: /^\/contact\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 9 },
+				page: { layouts: [0], errors: [1], leaf: 11 },
 				endpoint: null
 			},
 			{
 				id: "/formtest",
 				pattern: /^\/formtest\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 10 },
+				page: { layouts: [0], errors: [1], leaf: 12 },
 				endpoint: null
 			},
 			{
 				id: "/manage",
 				pattern: /^\/manage\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 11 },
+				page: { layouts: [0], errors: [1], leaf: 13 },
 				endpoint: null
 			},
 			{
 				id: "/sqlite",
 				pattern: /^\/sqlite\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 12 },
+				page: { layouts: [0], errors: [1], leaf: 14 },
 				endpoint: null
 			},
 			{
 				id: "/sverdle",
 				pattern: /^\/sverdle\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 13 },
+				page: { layouts: [0], errors: [1], leaf: 15 },
 				endpoint: null
 			}
 		],
