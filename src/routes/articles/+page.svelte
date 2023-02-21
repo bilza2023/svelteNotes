@@ -1,18 +1,16 @@
+
+ 
 <script>
+
 import Table from "./table.svelte";
 import {enhance} from "$app/forms";
 export let  data;
-let filterToggle = false;
-const articlesAll = [...data.articles];
-// export let form;
-let articles = articlesAll;
-let searchText = "";
-// console.log(form);
 
-// const search = ()=>{
-// console.log(searchText);
-// console.log(data);
-// }
+let filterToggle = false;
+let searchText = "";
+// export let form;
+let articles =  [...data.articles];
+
 function search( ) {
   const trimmed = searchText.trim();
   if (trimmed == ""){return;}
@@ -34,6 +32,17 @@ filterToggle = false;
 searchText = "";
 articles = [...articlesAll];
 }
+
+function delarticle(event){
+const id = parseInt(event.detail.id);
+const filteredArticles = articles.filter(article => article.id !== id);
+
+console.log("delarticle from parent::",id);
+console.log("filteredArticles::",filteredArticles);
+articles = [...filteredArticles];
+
+}
+
 </script>
 
 
@@ -66,4 +75,4 @@ Found : {articles.length}
 <hr/>
 
 
-<Table articles={articles} />
+<Table articles={articles} on:delarticle={delarticle} />

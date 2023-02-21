@@ -7,7 +7,8 @@ console.log(form);
 
 <div class="bg-gray-800 w-full">
   
-  <form class="w-3/5 bg-gray-500 p-4 rounded-lg mx-auto mt-2" method="POST"
+  <form class="w-3/5 bg-gray-500 p-4 rounded-lg mx-auto mt-2" 
+  method="POST"
   action="?/create"
   use:enhance
   >
@@ -68,6 +69,7 @@ console.log(form);
 <td class="p-2 m-2 border-2  "> {article.content}</td> 
 <td class="p-2 m-2 border-2   bg-green-700">Edit</td> 
 <td class="p-2 m-2 border-2   bg-red-800">
+
 <form method="post" action="?/delete" use:enhance>
 <input name="id" type="hidden" hidden value={article.id}>
 <button>Delete</button>
