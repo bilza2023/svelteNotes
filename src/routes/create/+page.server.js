@@ -1,4 +1,4 @@
-// import { goto } from '$app/navigation';
+
 import {Article} from "../../../dbSqlite/dbSqlite.js";
 
 
@@ -11,7 +11,7 @@ export const actions = {
   // console.log("formData",formData);
   Article.create({title , content });
 
-  // await goto('http://localhost');
+  // 
   return {success: true};
     // TODO log the user in
   }

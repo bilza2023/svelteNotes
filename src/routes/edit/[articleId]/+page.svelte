@@ -1,4 +1,5 @@
 <script>
+import { goto } from '$app/navigation';
 export let data;
 const article = data.article;
 import {enhance} from "$app/forms";
@@ -10,7 +11,18 @@ import {enhance} from "$app/forms";
 <form class="mx-auto w-full   px-4 py-2 border rounded-lg"
 method="POST"
 action="?/update"
-use:enhance 
+
+use:enhance={ async ({ form, data, action, cancel }) => {
+/////////////////////////////////////////
+    return async ({ result, update }) => {
+    if (result.type == "success"){
+    await goto('http://localhost');
+    }
+      // `result` is an `ActionResult` object
+      // `update` is a function which triggers the logic that would be triggered if this callback wasn't set
+    };
+  }}
+
 >
 
   <label for="article-title" class="text-white block font-medium text-gray-700 mb-1"> Title:</label>
