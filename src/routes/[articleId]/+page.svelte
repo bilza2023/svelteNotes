@@ -9,6 +9,6 @@ const {article} = data;
 <h1>{article.title}</h1>
 
 <div>
-{article.content}
+{@html article.content}
 </div>
 </div>

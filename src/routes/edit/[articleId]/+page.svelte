@@ -1,6 +1,5 @@
 <script>
 import { goto } from '$app/navigation';
-import toast, { Toaster } from 'svelte-french-toast';
 export let data;
 const article = data.article;
 import {enhance} from "$app/forms";
@@ -14,13 +13,10 @@ method="POST"
 action="?/update"
 
 use:enhance={ async ({ form, data, action, cancel }) => {
-toast.success("It works!");
 /////////////////////////////////////////
     return async ({ result, update }) => {
-        toast.success("It works!");
     if (result.type == "success"){
 
-    console.log("It works!");
     // await goto('http://localhost');
     }
       // `result` is an `ActionResult` object
