@@ -1,8 +1,7 @@
-
- 
 <script>
-
 import Table from "./table.svelte";
+import { SvelteEasyToast, toast } from 'svelte-easy-toast';
+
 import {enhance} from "$app/forms";
 export let  data;
 let articles = data.articles;
@@ -12,6 +11,9 @@ let searchText = "";
 
 //////////////////////////////////////////////
 function search( ) {
+// toast.push('Hello world!')
+// console.log('Hello world!')
+showToast();
 const trimmed = searchText.trim();
   if (trimmed == ""){return;}
 const lower  = trimmed.toLocaleLowerCase(); 
@@ -41,11 +43,24 @@ const filteredArticles = articles.filter(article => article.id !== id);
 // console.log("filteredArticles::",filteredArticles);
 //--keep this compatibility
 data.articles = [...filteredArticles];
-articles = data.articles
+articles = data.articles;
+// toast.push('Hello world!');
 }
 
+
+ const showToast = () => {
+	    toast({
+		type: 'primary', // dark, danger, success, info, warning, default, error
+		position: 'top-right', // top-left, top-center, bottom-left, bottom-right, bottom-center
+		text: 'This Toast is from Svelte!',
+		title: 'Svelte is too awesome!',
+	    });
+     }
 </script>
 
+<!-- <button on:click={showToast}>show Toast</button> -->
+
+<SvelteEasyToast />
 <h1 class="text-white">Articles</h1>
 
 

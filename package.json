@@ -6,7 +6,7 @@
     "build": "vite build -- --port 80",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "deploy" : "npx gh-pages -d build"
+    "deploy": "npx gh-pages -d build"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -24,6 +24,7 @@
   "description": "Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).",
   "main": "svelte.config.js",
   "dependencies": {
+    "@zerodevx/svelte-toast": "1.0.0-rc.1",
     "acorn": "^8.8.2",
     "acorn-walk": "^8.2.0",
     "assertion-error": "^1.1.0",
@@ -71,6 +72,7 @@
     "streamsearch": "^1.1.0",
     "strip-literal": "^1.0.1",
     "supports-preserve-symlinks-flag": "^1.0.0",
+    "svelte-easy-toast": "^1.1.0",
     "svelte-hmr": "^0.15.1",
     "tiny-glob": "^0.2.9",
     "tinybench": "^2.3.1",
