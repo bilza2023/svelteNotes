@@ -1,4 +1,4 @@
-import {db,UserSeq,CitySeq,RegionSeq,BusinessSeq,BusinessTypeSeq,ArticleSeq} from './dbSequalize.js';
+import {db,UserSeq,CitySeq,RegionSeq,BusinessSeq,BusinessTypeSeq,ArticleSeq,CategorySeq} from './dbSequalize.js';
 //-----------------------------------------------
 import Table from './table';
 ////////////////////--user model--////////////////////////
@@ -8,8 +8,9 @@ const Region = new Table( RegionSeq );
 const Business = new Table( BusinessSeq );
 const BusinessType = new Table( BusinessTypeSeq );
 const Article = new Table( ArticleSeq );
+const Category = new Table( CategorySeq );
 
-
+ ''
 //................
 export  {
 db,
@@ -18,6 +19,7 @@ City,
 Region,
 Business,
 BusinessType,
-Article
+Article,
+Category
 }
 

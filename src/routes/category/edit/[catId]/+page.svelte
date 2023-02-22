@@ -1,8 +1,8 @@
 <script>
-import { goto } from '$app/navigation';
+// import { goto } from '$app/navigation';
 import { SvelteEasyToast, toast } from 'svelte-easy-toast';
 export let data;
-const article = data.article;
+const cat = data.catId;
 import {enhance} from "$app/forms";
 // console.log(article);
 

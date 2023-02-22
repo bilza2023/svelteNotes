@@ -12,6 +12,7 @@ import  getCity             from './models/citiesModel.js';
 import  getBusiness         from './models/businessModel';
 import  getBusinessType     from './models/businessTypeModel';
 import  getArticle          from './models/articleModel';
+import  getCategory          from './models/categoryModel';
 
 ////////////////////--database connection--////////////////////////
 const db = new Sequelize({
@@ -27,6 +28,7 @@ const CitySeq = getCity( db , DataTypes);
 const BusinessSeq = getBusiness( db , DataTypes);
 const BusinessTypeSeq = getBusinessType( db , DataTypes);
 const ArticleSeq = getArticle( db , DataTypes);
+const CategorySeq = getCategory( db , DataTypes);
 
 
 ////////////////////////////////////////////////////
@@ -56,5 +58,6 @@ CitySeq,
 RegionSeq,
 BusinessSeq,
 BusinessTypeSeq,
-ArticleSeq
+ArticleSeq,
+CategorySeq
 }

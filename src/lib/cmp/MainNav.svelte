@@ -5,6 +5,7 @@
 
 <a class="bg-gray-800 text-white "  href="/">Home</a>
 <a class="bg-gray-800 text-white "  href="/create">New Note</a>
+<a class="bg-gray-800 text-white "  href="/category">Category</a>
 <a class="bg-gray-800 text-white "  href="/contact">Contact</a>
 <a class="bg-gray-800 text-white "  href="/about">About</a>
 

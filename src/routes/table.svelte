@@ -80,4 +80,3 @@ function edit ( )  {
 </tr>
 {/each}
 </table>
-
